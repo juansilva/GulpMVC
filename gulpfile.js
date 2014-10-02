@@ -1,7 +1,7 @@
 var gulp = require('gulp')
 ,	concat = require('gulp-concat')
 ,	uglify = require('gulp-uglify')
-
+,	template = require('gulp-template-compile')
 
 ///////////////////////
 /// Javascript task ///
@@ -19,13 +19,23 @@ var javascript_globs = [
 ,	'js/routers/router.js'
 ,	'js/app.js'
 ]
+
 gulp.task('js', function()
 {
 	return gulp.src(javascript_globs)
 		.pipe(concat('all.js'))
 		.pipe(uglify())
-		.pipe(gulp.dest("dist"));
-});
+		.pipe(gulp.dest("dist"))
+})
+
+gulp.task('tmpl', function()
+{
+	return gulp.src('templates/*.tmpl')
+		.pipe(template())
+		.pipe(concat('templates.js'))
+		.pipe(gulp.dest("dist"))
+})
+
 
 
 gulp.task('default', function()
