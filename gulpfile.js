@@ -55,6 +55,7 @@ gulp.task('css', function()
 });
 
 
+
 /////////////////
 /// HTML task ///
 /////////////////
@@ -66,6 +67,15 @@ gulp.task('html', ['js', 'css'], function()
 		.pipe(htmlmin({collapseWhitespace: true}))
 		.pipe(gulp.dest('dist'))
 });
+
+
+
+gulp.task('dev', function()
+{
+	gulp.watch([].concat(javascript_globs, css_globs, html_globs), ['html']).on('change', function(event) {
+	  console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
+	});
+})
 
 
 gulp.task('default', function()
