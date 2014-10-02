@@ -2,6 +2,8 @@ var gulp = require('gulp')
 ,	concat = require('gulp-concat')
 ,	uglify = require('gulp-uglify')
 ,	template = require('gulp-template-compile')
+,	minifyCSS = require('gulp-minify-css')
+,	base64 = require('gulp-base64')
 
 ///////////////////////
 /// Javascript task ///
@@ -37,6 +39,18 @@ gulp.task('tmpl', function()
 })
 
 
+///////////////////////
+/// Javascript task ///
+///////////////////////
+var css_globs = ['bower_components/todomvc-common/base.css']
+
+gulp.task('css', function()
+{
+	return gulp.src(css_globs)
+		.pipe(base64())
+		.pipe(minifyCSS())
+		.pipe(gulp.dest('dist'))
+});
 
 gulp.task('default', function()
 {
