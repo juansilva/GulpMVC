@@ -12,6 +12,7 @@ var javascript_globs = [
 ,	'bower_components/backbone/backbone.js'
 ,	'bower_components/backbone.localStorage/backbone.localStorage.js'
 ,	'js/models/todo.js'
+,	'dist/tmpl.js'
 ,	'js/collections/todos.js'
 ,	'js/views/todo-view.js'
 ,	'js/views/app-view.js'
@@ -19,7 +20,7 @@ var javascript_globs = [
 ,	'js/app.js'
 ]
 
-gulp.task('js', function()
+gulp.task('js', ['tmpl'], function()
 {
 	return gulp.src(javascript_globs)
 		.pipe(concat('all.js'))
