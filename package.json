@@ -1,0 +1,14 @@
+{
+  "name": "GulpMVC",
+  "version": "0.0.0",
+  "description": "Gulp for Backbone TodoMVC",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Juan Silva",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.8.8"
+  }
+}
