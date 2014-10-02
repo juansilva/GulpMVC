@@ -23,6 +23,7 @@ gulp.task('js', function()
 {
 	return gulp.src(javascript_globs)
 		.pipe(concat('all.js'))
+		.pipe(uglify())
 		.pipe(gulp.dest("dist"));
 });
 
