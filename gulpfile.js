@@ -11,7 +11,6 @@ var javascript_globs = [
 ,	'bower_components/underscore/underscore.js'
 ,	'bower_components/backbone/backbone.js'
 ,	'bower_components/backbone.localStorage/backbone.localStorage.js'
-,	'dist/templates.js'
 ,	'js/models/todo.js'
 ,	'js/collections/todos.js'
 ,	'js/views/todo-view.js'
@@ -32,7 +31,7 @@ gulp.task('tmpl', function()
 {
 	return gulp.src('templates/*.tmpl')
 		.pipe(template())
-		.pipe(concat('templates.js'))
+		.pipe(concat('tmpl.js'))
 		.pipe(gulp.dest("dist"))
 })
 

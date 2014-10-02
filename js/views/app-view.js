@@ -15,7 +15,7 @@ var app = app || {};
 		el: '#todoapp',
 
 		// Our template for the line of statistics at the bottom of the app.
-		statsTemplate: JST['item.tmpl'],
+		statsTemplate: JST['stats.tmpl'],
 
 		// Delegated events for creating new items, and clearing completed ones.
 		events: {
