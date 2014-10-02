@@ -9,6 +9,7 @@
   "author": "Juan Silva",
   "license": "ISC",
   "devDependencies": {
-    "gulp": "^3.8.8"
+    "gulp": "^3.8.8",
+    "gulp-concat": "^2.4.1"
   }
 }
